@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PIM Datalogger</title>
+  <!-- materialize icons, css & js -->
+  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" href="/css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+</head>
+<body class="grey lighten-4">
+
+  <!-- top nav -->
+  <nav class="z-depth-0">
+    <div class="nav-wrapper container">
+      <a href="/">Pim <span>Datalogger</span></a>
+      <span class="right grey-text text-darken-1">
+        <i class="menu-icons material-icons sidenav-trigger" data-target="side-functions">bluetooth</i>
+        <i class="hidden-form menu-icons material-icons sidenav-trigger" data-target="side-menu">menu</i>
+      </span>      
+    </div>
+  </nav>
+
+  <!-- side nav menu -->
+  <ul id="side-menu" class="sidenav side-menu">
+    <li><a class="subheader">PIM DATALOGGER</a></li>    
+    <li><a href="/" class="waves-effect">Main</a></li>
+    <li><a href="/pages/about.html" class="waves-effect">About</a></li>
+
+  </ul>
+
+<!-- side nav functions -->
+<ul id="side-functions" class="sidenav side-menu">
+  <li><a class="subheader">PIM DATALOGGER</a></li>
+  <li><a id="connect" class="waves-effect waves-light btn">Connect</a></li>
+  <li><a id="disconnect" class="waves-effect waves-light btn">Disconnect</a></li>
+  <li><a id="download" class="waves-effect waves-light btn">Download</a></li>
+  <li><a class="subheader">TERMINAL:</a></li>
+  <li>
+    <div class="container grey-text">     
+     
+      <form class="hidden-form" id="send-form">
+        <input id="input" type="text" />
+        <button type="submit">Send</button>
+      </form>
+  
+      <div id="terminal">
+        <div>Device connection...</div>
+        <!-- used for testing sending data to arduino -->
+        <!-- <div class="out">-</div>
+        <div class="in">-</div> -->
+      </div>
+    
+  </div>
+  </li>
+</ul>
+
+  <!-- recipes -->
+  <div class="recipes container grey-text text-darken-1">
+    <div class="card-panel recipe white row">
+      <!-- <img src="/img/dish.png" alt="recipe thumb"> -->
+      <div class="recipe-details">
+        <div class="recipe-title">eSUP Thust Lab data values</div>
+        <div class="recipe-ingredients">Values are refreshed every 0.5s</div>
+        
+      <table>
+        <thead>
+          <tr>
+              <th>Description</th>
+              <th>Value</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Voltage (V)</td>
+            <td id="volts">-</td>
+          </tr>
+          <tr>
+            <td>Thrust (lb)</td>
+            <td id="thrust">-</td>
+          </tr>
+          <tr>
+            <td >Current (A)</td>
+            <td id="amps">-</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="recipe-delete">
+      </div>
+    </div>
+    
+    
+    <div class="card-panel recipe white row">
+      <!-- <img src="/img/dish.png" alt="recipe thumb"> -->
+      <div class="recipe-details">
+        <div class="recipe-title">Plotter</div>
+        <div class="recipe-ingredients">This is a demo image.. in progress</div>
+        <canvas id="myChart"></canvas>
+
+      </div>
+      <div class="recipe-delete">
+      </div>
+    </div>
+
+   
+
+  </div>
+
+  <script src="/js/ui.js"></script>
+  <script src="/js/main.js"></script>     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/chart.js"></script>  
+
+
+</body>
+</html>
